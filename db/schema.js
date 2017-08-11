@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 const Collectible = new Schema({
     name: String,
     description: String,
+    released: 0,
     condition: { 
         type: String,
         enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],

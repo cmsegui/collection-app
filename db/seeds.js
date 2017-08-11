@@ -22,59 +22,69 @@ Collectible.remove({}, (err) => {
 
 const collectibles1 = new Collectible (
     {
-    name: '2016 Nike Mag',
-    description: 'Nike partnered up with Michael J. Fox Foundation to create less than 100 pairs of Mags globally.',
-    condition: ,
-    img: String,
-    createAt: Date,
+    name: '2011 Nike Mag',
+    description: 'In 2011 Nike partnered up with the Michael J. Fox Foundation to release these worldwide.',
+    released: 100,
+    condition: { 
+        type: String,
+        enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
+        default: 'GOOD'
+    },
+    img: 'http://i.imgur.com/jZoUH04.png',
+    createdAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
     }
 )
 
 const collectibles2 = new Collectible (
     {
-    name: String,
-    description: String,
-    condition: String,
-    img: String,
-    createAt: Date,
+    name: '2015 Eminem x Carhartt x Jordan IV',
+    description: 'In 2015 Eminem released these through an auction benefitting Literacy Through Songwriting program.',
+    released: 4,
+    condition: { 
+        type: String,
+        enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
+        default: 'GOOD'
+    },
+    img: 'http://i.imgur.com/2yIcwBj.png',
+    createdAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
     }
 )
 
 const collectibles3 = new Collectible (
     {
-    name: String,
-    description: String,
-    condition: String,
-    img: String,
-    createAt: Date,
+    name: '2014 Nike Air Yeezy 2 Red October',
+    description: 'In 2014, after leaving Nike over a money dispute to join Adidas, Nike released these sans Kanye.',
+    released: 5000,
+    condition: { 
+        type: String,
+        enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
+        default: 'GOOD'
+    },
+    img: 'http://i.imgur.com/zUSDPuu.png',
+    createdAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
     }
 )
 
-const Collections1 = new Collections (
-    {
-    name: String,
-    description: String,
-    createAt: Date,
-    updatedAt: Date,
-    category: [],
-    collectibles: [collectibles]
-    }
-)
 const collectibles4 = new Collectible (
    {
-    name: String,
-    description: String,
-    condition: String,
-    img: String,
-    createAt: Date,
+    name: '2011 Air Jordan Oregon Ducks',
+    description: '',
+    released: ,
+    condition: { 
+        type: String,
+        enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
+        default: 'GOOD'
+    },
+    img: '',
+    createdAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
    }
 )
 
@@ -86,7 +96,7 @@ const collectibles5 = new Collectible (
     img: String,
     createAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
    }
 )
 
@@ -98,7 +108,7 @@ const Collections2 = new Collections (
     img: String,
     createAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
     }
 )
 
