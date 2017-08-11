@@ -3,36 +3,40 @@ const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 
-const collectibles = new Schema({
+const Collectible = new Schema({
     name: String,
     description: String,
-    condition: String,
+    condition: { 
+        type: String,
+        enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
+        default: 'GOOD'
+    },
     img: String,
-    createAt: Date,
+    createdAt: Date,
     updatedAt: Date,
-    sale: false,
+    forSale: false,
 });
 
-const collections = new Schema({
+const Collection = new Schema({
     name: String,
     description: String,
-    createAt: Date,
+    createdAt: Date,
     updatedAt: Date,
     category: [],
-    collectibles: [collectibles]
+    Collectible: [Collectible]
 });
 
-const users = new Schema({
+const User = new Schema({
     userName: String,
     email: String,
     img: String,
-    createAt: Date,
+    createdAt: Date,
     updatedAt: Date,
-    collections: [collections]
+    Collection: [Collection]
 });
 
 
-collectibles.pre('save', function (next) {
+Collectible.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
@@ -41,7 +45,7 @@ collectibles.pre('save', function (next) {
     next();
 });
 
-collections.pre('save', function (next) {
+Collection.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
@@ -50,7 +54,7 @@ collections.pre('save', function (next) {
     next();
 });
 
-users.pre('save', function (next) {
+User.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
@@ -59,12 +63,12 @@ users.pre('save', function (next) {
     next();
 });
 
-const collectiblesModel = mongoose.model('collectibles', collectibles);
-const collectionsModel = mongoose.model('collections', collections);
-const usersModel = mongoose.model('users', users);
+const CollectibleModel = mongoose.model('Collectible', Collectible);
+const CollectionModel = mongoose.model('Collection', Collection);
+const UserModel = mongoose.model('User', User);
 
 module.exports = {
-    users: usersModel,
-    collections: collectionsModel,
-    collectibles: collectiblesModel
+    User: UserModel,
+    Collection: CollectionModel,
+    Collectible: CollectibleModel
 };
