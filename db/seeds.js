@@ -20,7 +20,7 @@ Collectible.remove({}, (err) => {
     console.log(err);
 });
 
-const collectibles1 = new Collectible(
+const collectible1 = new Collectible(
     {
         name: 'Nike Mag',
         year: 2011,
@@ -31,14 +31,11 @@ const collectibles1 = new Collectible(
             enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
             default: 'GOOD'
         },
-        img: 'http://i.imgur.com/jZoUH04.png',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false,
+        img: 'http://i.imgur.com/jZoUH04.png'
     }
 )
 
-const collectibles2 = new Collectible(
+const collectible2 = new Collectible(
     {
         name: '2015 Eminem x Carhartt x Jordan IV',
         year: 2015,
@@ -50,13 +47,10 @@ const collectibles2 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/2yIcwBj.png',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false,
     }
 )
 
-const collectibles3 = new Collectible(
+const collectible3 = new Collectible(
     {
         name: 'Nike Air Yeezy 2 Red October',
         year: 2014,
@@ -68,13 +62,10 @@ const collectibles3 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/zUSDPuu.png',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false,
     }
 )
 
-const collectibles4 = new Collectible(
+const collectible4 = new Collectible(
     {
         name: 'Air Jordan Oregon Ducks',
         year: 2011,
@@ -86,13 +77,11 @@ const collectibles4 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/1sfwwh5.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false,
+        
     }
 )
 
-const collectibles5 = new Collectible(
+const collectible5 = new Collectible(
     {
         name: 'Staple Design x Nike Dunk Low Pro SB Pigeon',
         year: 2005,
@@ -104,13 +93,11 @@ const collectibles5 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/KZuKi99.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
+        
     }
 )
 
-const collectibles6 = new Collectible(
+const collectible6 = new Collectible(
     {
         name: 'Nike Air Yeezy 2 Solar Red',
         year: 2012,
@@ -122,13 +109,11 @@ const collectibles6 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/Nge57K6.png',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
+        
     }
 )
 
-const collectibles7 = new Collectible(
+const collectible7 = new Collectible(
     {
         name: 'Nike Air Foamposite NRG Galaxy',
         year: 2012,
@@ -140,13 +125,11 @@ const collectibles7 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/g0algVo.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
+        
     }
 )
 
-const collectibles8 = new Collectible(
+const collectible8 = new Collectible(
     {
         name: 'Nike Air Foamposite One ParaNorman',
         year: 2012,
@@ -158,13 +141,10 @@ const collectibles8 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/qYgxdUY.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collectibles9 = new Collectible(
+const collectible9 = new Collectible(
     {
         name: 'Air Jordan V Tokyo 23',
         year: 2011,
@@ -176,13 +156,11 @@ const collectibles9 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/9oMM9Cu.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
+        
     }
 )
 
-const collectibles10 = new Collectible(
+const collectible10 = new Collectible(
     {
         name: 'Kid Robot x Nike Air Max 1',
         year: 2005,
@@ -194,13 +172,11 @@ const collectibles10 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/zo20rn4.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
+        
     }
 )
 
-const collectibles11 = new Collectible(
+const collectible11 = new Collectible(
     {
         name: 'Nike Lebron X What the Lebron',
         year: 2012,
@@ -212,13 +188,10 @@ const collectibles11 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/rN5gsSK.png',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collectibles12 = new Collectible(
+const collectible12 = new Collectible(
     {
         name: 'Jeremy Scott x adidas Origin JS Bear',
         year: 2011,
@@ -230,13 +203,10 @@ const collectibles12 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/dwHtbZe.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collectibles13 = new Collectible(
+const collectible13 = new Collectible(
     {
         name: 'KAWS x BAPE Chompers',
         year: 2006,
@@ -248,13 +218,10 @@ const collectibles13 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/oB1aEvR.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collectibles14 = new Collectible(
+const collectible14 = new Collectible(
     {
         name: 'Jeremy Scott x adidas Money Runway',
         year: 2002,
@@ -266,13 +233,10 @@ const collectibles14 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/w1ENxCv.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collectibles15 = new Collectible(
+const collectible15 = new Collectible(
     {
         name: 'Nike Dunk Low Pro SB Paris',
         year: 2003,
@@ -284,37 +248,34 @@ const collectibles15 = new Collectible(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/mctmk4r.jpg',
-        createdAt: Date.now(),
-        upDatedAt: Date.now(),
-        forSale: false
     }
 )
 
-const collections1 = new Collections(
+const collection1 = new Collection(
     {
         name: 'Vintage Kicks',
         description: 'This collection started in 2002 and I have traveled quite a bit to land some of these.' ,
         createdAt: Date.now(),
         updatedAt: Date.now(),
         category: '',
-        collectible: [collectibles1, collectibles2, collectibles3, ]
+        collectible: [collectible1, collectible2, collectible3, collectible4, collectible5, collectible6,
+                    collectible7, collectible8, collectible9, collectible10, collectible11, collectible12,
+                    collectible13, collectible14, collectible15]
     }
 )
 
 const user1 = new User(
     {
-    userName: String,
-    email: String,
-    img: String,
-    createdAt: Date,
-    updatedAt: Date,
-    Collection: [Collection]
+    userName: 'Mr. Pink',
+    email: 'pinkrobot@email.com',
+    img: 'http://i.imgur.com/dVuhTZX.jpg',
+    collection: collection1
     }
 )
 
-User1.save((err) => {
+user1.save((err) => {
     if (err) console.log(err);
-    console.log('User1 was created');
+    console.log('Mr. Pink was created');
 });
 
 mongoose.connection.close();

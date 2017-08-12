@@ -14,27 +14,48 @@ const Collectible = new Schema({
         default: 'GOOD'
     },
     img: String,
-    createdAt: Date,
-    updatedAt: Date,
-    forSale: false,
+    createdAt: {
+        type: Date,
+        default: Date.now()
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now()
+    },
+    forSale: {
+        type: Boolean,
+        default: false
+    },
 });
 
 const Collection = new Schema({
     name: String,
     description: String,
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt: {
+        type: Date,
+        default: Date.now()
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now()
+    }
     category: [],
-    Collectible: [Collectible]
+    collectibles: [Collectible]
 });
 
 const User = new Schema({
     userName: String,
     email: String,
     img: String,
-    createdAt: Date,
-    updatedAt: Date,
-    Collection: [Collection]
+    createdAt: {
+        type: Date,
+        default: Date.now()
+    }
+    updatedAt: {
+        type: Date,
+        default: Date.now()
+    }
+    collection: Collection
 });
 
 
@@ -56,14 +77,14 @@ Collection.pre('save', function (next) {
     next();
 });
 
-User.pre('save', function (next) {
-    now = new Date();
-    this.updatedAt = now;
-    if (!this.createdAt) {
-        this.createdAt = now;
-    }
-    next();
-});
+// User.pre('save', function (next) {
+//     now = new Date();
+//     this.updatedAt = now;
+//     if (!this.createdAt) {
+//         this.createdAt = now;
+//     }
+//     next();
+// });
 
 const CollectibleModel = mongoose.model('Collectible', Collectible);
 const CollectionModel = mongoose.model('Collection', Collection);
