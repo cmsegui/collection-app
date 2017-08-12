@@ -255,7 +255,7 @@ const Shoebox1 = new Shoebox(
         description: 'This collection started in 2002 and I have traveled quite a bit to land some of these.' ,
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        shoe: [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8, shoe9, shoe10, shoe11, shoe12, shoe13, shoe14, shoe15]
+        shoes: [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8, shoe9, shoe10, shoe11, shoe12, shoe13, shoe14, shoe15]
     }
 )
 

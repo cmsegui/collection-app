@@ -26,6 +26,10 @@ const Shoe = new Schema({
         type: Boolean,
         default: false
     },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const Shoebox = new Schema({
@@ -39,7 +43,7 @@ const Shoebox = new Schema({
         type: Date,
         default: Date.now(),
     },
-    shoe: [Shoe]
+    shoes: [Shoe]
 });
 
 const User = new Schema({
