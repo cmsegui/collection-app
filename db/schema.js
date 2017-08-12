@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 
-const Collectible = new Schema({
+const Shoe = new Schema({
     name: String,
     year: 0,
     description: String,
@@ -28,7 +28,7 @@ const Collectible = new Schema({
     },
 });
 
-const Collection = new Schema({
+const Shoebox = new Schema({
     name: String,
     description: String,
     createdAt: {
@@ -37,10 +37,9 @@ const Collection = new Schema({
     },
     updatedAt: {
         type: Date,
-        default: Date.now()
-    }
-    category: [],
-    collectibles: [Collectible]
+        default: Date.now(),
+    },
+    shoe: [Shoe]
 });
 
 const User = new Schema({
@@ -50,16 +49,16 @@ const User = new Schema({
     createdAt: {
         type: Date,
         default: Date.now()
-    }
+    },
     updatedAt: {
         type: Date,
         default: Date.now()
-    }
-    collection: Collection
+    },
+    shoebox: Shoebox
 });
 
 
-Collectible.pre('save', function (next) {
+Shoe.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
@@ -68,7 +67,7 @@ Collectible.pre('save', function (next) {
     next();
 });
 
-Collection.pre('save', function (next) {
+Shoebox.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
@@ -77,21 +76,21 @@ Collection.pre('save', function (next) {
     next();
 });
 
-// User.pre('save', function (next) {
-//     now = new Date();
-//     this.updatedAt = now;
-//     if (!this.createdAt) {
-//         this.createdAt = now;
-//     }
-//     next();
-// });
+User.pre('save', function (next) {
+    now = new Date();
+    this.updatedAt = now;
+    if (!this.createdAt) {
+        this.createdAt = now;
+    }
+    next();
+});
 
-const CollectibleModel = mongoose.model('Collectible', Collectible);
-const CollectionModel = mongoose.model('Collection', Collection);
+const ShoeModel = mongoose.model('Shoe', Shoe);
+const ShoeboxModel = mongoose.model('Shoebox', Shoebox);
 const UserModel = mongoose.model('User', User);
 
 module.exports = {
     User: UserModel,
-    Collection: CollectionModel,
-    Collectible: CollectibleModel
+    Shoebox: ShoeboxModel,
+    Shoe: ShoeModel
 };

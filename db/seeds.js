@@ -1,26 +1,24 @@
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/collection-app');
 require('dotenv').config();
+const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
 const User = require('../models/user');
-const Collection = require('../models/collection');
-const Collectible = require('../models/collectible');
+const Shoebox = require('../models/shoebox');
+const Shoe = require('../models/shoe');
 
 mongoose.Promise = global.Promise;
 
 User.remove({}, (err) => {
     console.log(err);
 });
-Collection.remove({}, (err) => {
+Shoebox.remove({}, (err) => {
     console.log(err);
 });
-Collectible.remove({}, (err) => {
+Shoe.remove({}, (err) => {
     console.log(err);
 });
 
-const collectible1 = new Collectible(
+const shoe1 = new Shoe(
     {
         name: 'Nike Mag',
         year: 2011,
@@ -35,7 +33,7 @@ const collectible1 = new Collectible(
     }
 )
 
-const collectible2 = new Collectible(
+const shoe2 = new Shoe(
     {
         name: '2015 Eminem x Carhartt x Jordan IV',
         year: 2015,
@@ -50,7 +48,7 @@ const collectible2 = new Collectible(
     }
 )
 
-const collectible3 = new Collectible(
+const shoe3 = new Shoe(
     {
         name: 'Nike Air Yeezy 2 Red October',
         year: 2014,
@@ -65,7 +63,7 @@ const collectible3 = new Collectible(
     }
 )
 
-const collectible4 = new Collectible(
+const shoe4 = new Shoe(
     {
         name: 'Air Jordan Oregon Ducks',
         year: 2011,
@@ -81,7 +79,7 @@ const collectible4 = new Collectible(
     }
 )
 
-const collectible5 = new Collectible(
+const shoe5 = new Shoe(
     {
         name: 'Staple Design x Nike Dunk Low Pro SB Pigeon',
         year: 2005,
@@ -97,7 +95,7 @@ const collectible5 = new Collectible(
     }
 )
 
-const collectible6 = new Collectible(
+const shoe6 = new Shoe(
     {
         name: 'Nike Air Yeezy 2 Solar Red',
         year: 2012,
@@ -113,7 +111,7 @@ const collectible6 = new Collectible(
     }
 )
 
-const collectible7 = new Collectible(
+const shoe7 = new Shoe(
     {
         name: 'Nike Air Foamposite NRG Galaxy',
         year: 2012,
@@ -129,7 +127,7 @@ const collectible7 = new Collectible(
     }
 )
 
-const collectible8 = new Collectible(
+const shoe8 = new Shoe(
     {
         name: 'Nike Air Foamposite One ParaNorman',
         year: 2012,
@@ -144,7 +142,7 @@ const collectible8 = new Collectible(
     }
 )
 
-const collectible9 = new Collectible(
+const shoe9 = new Shoe(
     {
         name: 'Air Jordan V Tokyo 23',
         year: 2011,
@@ -160,7 +158,7 @@ const collectible9 = new Collectible(
     }
 )
 
-const collectible10 = new Collectible(
+const shoe10 = new Shoe(
     {
         name: 'Kid Robot x Nike Air Max 1',
         year: 2005,
@@ -176,7 +174,7 @@ const collectible10 = new Collectible(
     }
 )
 
-const collectible11 = new Collectible(
+const shoe11 = new Shoe(
     {
         name: 'Nike Lebron X What the Lebron',
         year: 2012,
@@ -191,7 +189,7 @@ const collectible11 = new Collectible(
     }
 )
 
-const collectible12 = new Collectible(
+const shoe12 = new Shoe(
     {
         name: 'Jeremy Scott x adidas Origin JS Bear',
         year: 2011,
@@ -206,7 +204,7 @@ const collectible12 = new Collectible(
     }
 )
 
-const collectible13 = new Collectible(
+const shoe13 = new Shoe(
     {
         name: 'KAWS x BAPE Chompers',
         year: 2006,
@@ -221,7 +219,7 @@ const collectible13 = new Collectible(
     }
 )
 
-const collectible14 = new Collectible(
+const shoe14 = new Shoe(
     {
         name: 'Jeremy Scott x adidas Money Runway',
         year: 2002,
@@ -236,7 +234,7 @@ const collectible14 = new Collectible(
     }
 )
 
-const collectible15 = new Collectible(
+const shoe15 = new Shoe(
     {
         name: 'Nike Dunk Low Pro SB Paris',
         year: 2003,
@@ -251,16 +249,13 @@ const collectible15 = new Collectible(
     }
 )
 
-const collection1 = new Collection(
+const Shoebox1 = new Shoebox(
     {
         name: 'Vintage Kicks',
         description: 'This collection started in 2002 and I have traveled quite a bit to land some of these.' ,
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        category: '',
-        collectible: [collectible1, collectible2, collectible3, collectible4, collectible5, collectible6,
-                    collectible7, collectible8, collectible9, collectible10, collectible11, collectible12,
-                    collectible13, collectible14, collectible15]
+        shoe: [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8, shoe9, shoe10, shoe11, shoe12, shoe13, shoe14, shoe15]
     }
 )
 
@@ -269,13 +264,16 @@ const user1 = new User(
     userName: 'Mr. Pink',
     email: 'pinkrobot@email.com',
     img: 'http://i.imgur.com/dVuhTZX.jpg',
-    collection: collection1
+    shoebox: Shoebox1
     }
 )
 
-user1.save((err) => {
-    if (err) console.log(err);
-    console.log('Mr. Pink was created');
+user1.save().then(() => {
+    console.log('user saved!');    
+}).catch((err) => {
+    console.log('error saving user', err);
 });
+
+
 
 mongoose.connection.close();

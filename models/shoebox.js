@@ -1,5 +1,5 @@
 const Schema = require("../db/schema");
 const mongoose = require('mongoose');
 
-const Collectible = Schema.Collectible;
-module.exports = Collectible;
+const Shoebox = Schema.Shoebox;
+module.exports = Shoebox;
