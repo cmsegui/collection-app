@@ -5,6 +5,7 @@ mongoose.Promise = global.Promise;
 
 const Collectible = new Schema({
     name: String,
+    year: 0,
     description: String,
     released: 0,
     condition: { 
