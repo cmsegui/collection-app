@@ -23,6 +23,8 @@ connection.on('error', (err) => {
 app.use(bodyParser.json());
 
 app.use('/api/user', UserController);
+app.use('/api/shoe', ShoeController);
+
 
 app.get('/', (req,res) => {
   res.send('Hello world!')
