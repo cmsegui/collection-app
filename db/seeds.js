@@ -525,7 +525,7 @@ user2.save().then(() => {
     console.log('error saving user', err);
 });
 
-shoebox1.save().then((shoebox) => {
+Shoebox1.save().then((shoebox) => {
     shoebox.shoes.map((shoe) => {
         shoe.save().then((shoe) => {
             console.log(shoe.name + ' saved.');
@@ -533,7 +533,7 @@ shoebox1.save().then((shoebox) => {
     });
 });
 
-shoebox2.save().then((shoebox) => {
+Shoebox2.save().then((shoebox) => {
     shoebox.shoes.map((shoe) => {
         shoe.save().then((shoe) => {
             console.log(shoe.name + ' saved.');
