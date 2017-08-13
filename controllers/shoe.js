@@ -5,12 +5,16 @@ const Shoe = require('../models/shoe');
 const router = express.Router();
 
 
-router.get('/:shoeId', (req, res) => {
-    Shoe.findOne({_id: req.params.shoeId})
-        .then((shoe) => {
-            return res.json(shoe);
-    });
+router.get('/:id', (req, res) => {
+    Shoe.findById(req.params.id).then((shoe) => {
+        console.log(shoe)}
+
+    // Shoe.findOne({id: req.params.id})
+    //     .then((shoe) => {
+    //         return res.json(shoe);
+    // });
 });
+
 
 // router.get('/new', (req, res) => {
 //     const userId = req.params.userId;

@@ -62,7 +62,7 @@ const User = new Schema({
 });
 
 
-Shoe.pre('save', function (next) {
+Shoe.pre('save', function(next) {
     now = new Date();
     this.updatedAt = now;
     if (!this.createdAt) {
