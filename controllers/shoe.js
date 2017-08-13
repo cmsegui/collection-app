@@ -6,13 +6,10 @@ const router = express.Router();
 
 
 router.get('/:id', (req, res) => {
-    Shoe.findById(req.params.id).then((shoe) => {
-        console.log(shoe)}
-
-    // Shoe.findOne({id: req.params.id})
-    //     .then((shoe) => {
-    //         return res.json(shoe);
-    // });
+    Shoe.findOne({id: req.params.id})
+        .then((shoe) => {
+            return res.json(shoe);
+    })
 });
 
 
