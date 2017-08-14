@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ObjectId = Schema.Types.ObjectId;
-
 mongoose.Promise = global.Promise;
- 
+
 const Shoe = new Schema({
     name: String,
     year: 0,
     description: String,
     released: 0,
-    condition: {
+    condition: { 
         type: String,
         enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
         default: 'GOOD'
@@ -33,7 +31,7 @@ const Shoe = new Schema({
         default: false,
     },
 });
- 
+
 const Shoebox = new Schema({
     name: String,
     description: String,
@@ -45,14 +43,9 @@ const Shoebox = new Schema({
         type: Date,
         default: Date.now(),
     },
-    shoes: [
-        {
-            type: ObjectId,
-            ref: 'Shoe'
-        }
-    ]
+    shoes: [Shoe]
 });
- 
+
 const User = new Schema({
     userName: String,
     email: String,
@@ -67,8 +60,8 @@ const User = new Schema({
     },
     shoebox: Shoebox
 });
- 
- 
+
+
 Shoe.pre('save', function(next) {
     now = new Date();
     this.updatedAt = now;
@@ -77,7 +70,7 @@ Shoe.pre('save', function(next) {
     }
     next();
 });
- 
+
 Shoebox.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
@@ -86,7 +79,7 @@ Shoebox.pre('save', function (next) {
     }
     next();
 });
- 
+
 User.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
@@ -95,11 +88,11 @@ User.pre('save', function (next) {
     }
     next();
 });
- 
+
 const ShoeModel = mongoose.model('Shoe', Shoe);
 const ShoeboxModel = mongoose.model('Shoebox', Shoebox);
 const UserModel = mongoose.model('User', User);
- 
+
 module.exports = {
     User: UserModel,
     Shoebox: ShoeboxModel,

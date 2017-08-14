@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import Shoebox from './components/shoebox';
+
 
 class User extends Component {
   render() {
