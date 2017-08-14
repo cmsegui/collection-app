@@ -75,7 +75,7 @@ const shoe4 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/1sfwwh5.jpg',
-        
+
     }
 )
 
@@ -91,7 +91,7 @@ const shoe5 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/KZuKi99.jpg',
-        
+
     }
 )
 
@@ -107,7 +107,7 @@ const shoe6 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/Nge57K6.png',
-        
+
     }
 )
 
@@ -123,7 +123,7 @@ const shoe7 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/g0algVo.jpg',
-        
+
     }
 )
 
@@ -154,7 +154,7 @@ const shoe9 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/9oMM9Cu.jpg',
-        
+
     }
 )
 
@@ -170,7 +170,7 @@ const shoe10 = new Shoe(
             default: 'GOOD'
         },
         img: 'http://i.imgur.com/zo20rn4.jpg',
-        
+
     }
 )
 
@@ -240,12 +240,8 @@ const shoe15 = new Shoe(
         year: 2003,
         description: 'French painter Bernard Buffet is the man behind these.',
         released: 202,
-        condition: {
-            type: '',
-            enum: ['NEW', 'LIKE NEW', 'VERY GOOD', 'GOOD', 'ACCEPTABLE'],
-            default: 'GOOD'
-        },
-        img: 'http://i.imgur.com/mctmk4r.jpg',
+        condition: 'NEW',
+        img: 'http://i.imgur.com/mctmk4r.jpg'
     }
 )
 
@@ -477,7 +473,7 @@ const shoe30 = new Shoe(
 const Shoebox1 = new Shoebox(
     {
         name: 'Vintage Kicks',
-        description: 'This collection started in 2002 and I have traveled quite a bit to land some of these.' ,
+        description: 'This collection started in 2002 and I have traveled quite a bit to land some of these.',
         createdAt: Date.now(),
         updatedAt: Date.now(),
         shoes: [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8, shoe9, shoe10, shoe11, shoe12, shoe13, shoe14, shoe15]
@@ -487,7 +483,7 @@ const Shoebox1 = new Shoebox(
 const Shoebox2 = new Shoebox(
     {
         name: 'For the Purists',
-        description: 'Nothing crazy just dope sneakers.' ,
+        description: 'Nothing crazy just dope sneakers.',
         createdAt: Date.now(),
         updatedAt: Date.now(),
         shoes: [shoe16, shoe17, shoe18, shoe19, shoe20, shoe21, shoe22, shoe23, shoe24, shoe25, shoe26, shoe27, shoe28, shoe29, shoe30]
@@ -496,31 +492,31 @@ const Shoebox2 = new Shoebox(
 
 const user1 = new User(
     {
-    userName: 'Mr. Pink',
-    email: 'pinkrobot@email.com',
-    img: 'http://i.imgur.com/dVuhTZX.jpg',
-    shoebox: Shoebox1
+        userName: 'Mr. Pink',
+        email: 'pinkrobot@email.com',
+        img: 'http://i.imgur.com/dVuhTZX.jpg',
+        shoebox: Shoebox1
     }
 )
 
-const user2= new User(
+const user2 = new User(
     {
-    userName: 'Jeffrey Lebowski',
-    email: 'thedude@email.com',
-    img: 'http://i.imgur.com/ooGKhIg.jpg',
-    shoebox: Shoebox2
+        userName: 'Jeffrey Lebowski',
+        email: 'thedude@email.com',
+        img: 'http://i.imgur.com/ooGKhIg.jpg',
+        shoebox: Shoebox2
     }
 )
 
 
 user1.save().then(() => {
-    console.log('user saved!');    
+    console.log('user saved!');
 }).catch((err) => {
     console.log('error saving user', err);
 });
 
 user2.save().then(() => {
-    console.log('user saved!');    
+    console.log('user saved!');
 }).catch((err) => {
     console.log('error saving user', err);
 });
@@ -541,5 +537,13 @@ Shoebox2.save().then((shoebox) => {
     });
 });
 
+const allShoes = [shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8, shoe9, shoe10,
+    shoe11, shoe12, shoe13, shoe14, shoe15, shoe16, shoe17, shoe18, shoe19, shoe20,
+    shoe21, shoe22, shoe23, shoe24, shoe25, shoe26, shoe27, shoe28, shoe29, shoe30];
+allShoes.map((shoe) => {
+    shoe.save().then((s) => {
+        console.log(s.name + ' saved.');
+    });
+});
 
 mongoose.connection.close();
