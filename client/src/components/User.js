@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import Shoebox from './components/shoebox';
 
-class App extends Component {
+class User extends Component {
   render() {
     return (
       <div>
@@ -13,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default User;
