@@ -1,47 +1,44 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-class Users extends Component {
-    constructor() {
-      super();
-      this.state = {
-        users: [],
-      }
-    }
-    componentWillMount() {
-      this._getUserData();
-    }
 
-    _getUserData = () => {
-      console.log('hit function')
-    axios.get(`http://localhost:3000/api/user/`)
+
+class Users extends Component {
+  constructor() {
+    super();
+    this.state = {
+      users: [],
+    }
+  }
+  componentWillMount() {
+    this._getUserData();
+  }
+
+  _getUserData = () => {
+    axios.get('http://localhost:3000/api/user/')
       .then((res) => {
-        const users = res.data
-        console.log(users)
-        // this.setState({users: res.data})
-        // console.log(res.data);
+        this.setState({ users: res.data })
       })
       .catch((err) => {
-        console.log(err);
-      })
+  console.log(err);
+});
     }
 
-  render() {
-    return (
-      <div>
-        <h1>The SneakerHeadz:</h1>
-          {this.state.users.map((user, i)=> {
-            return(
-              <div key={i}>
-                <li></li>
-              </div>
-            )
-          })}
+render() {
+  return (
+    <div>
+      <h1>The SneakerHeadz:</h1>
+      {this.state.users.map((user) => {
+        return (<div key={user.id}>
+                  <li>{user.userName}</li>
+                  <img src={user.img} />
+                </div>)
+      })}
 
 
-      </div>
-      
-    );
-  }
+    </div>
+
+  );
+}
 }
 
 export default Users;

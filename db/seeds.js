@@ -403,7 +403,7 @@ const user1 = new User(
  
 const user2 = new User(
     {
-        userName: 'Jeffrey Lebowski',
+        userName: 'The Dude',
         email: 'thedude@email.com',
         img: 'http://i.imgur.com/ooGKhIg.jpg',
         shoebox: Shoebox2
