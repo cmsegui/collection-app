@@ -32,7 +32,7 @@ class Users extends Component {
             <li>{user.userName}</li>
             <img src={user.img} />
 
-            <Link to='/shoebox'>Shoebox </Link>
+            <Link to={`\/shoebox\/${user.email}`}>Shoebox</Link>
           </div>)
         })}
       </div>
