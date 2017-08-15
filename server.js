@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const UserController = require('./controllers/user');
 const ShoeController = require('./controllers/shoe');
 const app = express();
@@ -22,6 +23,7 @@ connection.on('error', (err) => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true }));
+app.use(cors());
 
 app.use('/api/user', UserController);
 app.use('/api/shoe', ShoeController);
