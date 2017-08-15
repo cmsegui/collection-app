@@ -4,74 +4,60 @@ const Shoebox = require('../models/shoebox');
 const Shoe = require('../models/shoe');
 const router = express.Router();
 
-
-router.get('/:id', (req, res) => {
-    Shoe.findOne({id: req.params.id})
+router.get('/', (req, res) => {
+    Shoe.find()
         .then((shoe) => {
             return res.json(shoe);
-    })
+        });
 });
 
+router.get('/:shoeId', (req, res) => {
+    Shoe.findById(req.params.shoeId)
+        .then((shoe) => {
+            return res.json(shoe);
+        });
+});
 
-// router.get('/new', (req, res) => {
-//     const userId = req.params.userId;
-//     const shoeboxId = req.params.shoeboxId
-//     res.render('', {
-//         userId: userId,
-//         shoeboxId: shoeboxId
-//     })
-// });
+router.post('/', (req, res) => {
+    const newShoe = new Shoe({
+        name: req.body.name,
+        year: req.body.year,
+        description: req.body.description,
+        released: req.body.released,
+        condition: req.body.condition,
+        img: req.body.img
+    });
+    newShoe.save().then((shoe) => {
+        return res.json(shoe)
+    });
+})
 
-// router.post('/', (req, res) => {
-//     const userId = req.params.userId;
-//     const shoeboxId = req.params.shoeboxId
-//     const shoeInfo = req.body;
-//     User.findById(userId)
-//         .then((user) => {
-//             const newShoe = new Shoe(shoeInfo)
-//             const foundShoebox = user.shoebox.find((shoebox) => {
-//                 return shoebox.id === shoeboxId
-//             });
-//             foundShoebox.shoe.push(newShoe);
-//             user.save();
+router.put('/:shoeId', (req, res) => {
+    Shoe.findByIdAndUpdate(req.params.shoeId, {
+        name: req.body.name,
+        year: req.body.year,
+        description: req.body.description,
+        released: req.body.released,
+        condition: req.body.condition,
+        img: req.body.img
+    })
+        .then((shoe) => {
+            return res.json(shoe);
+        });
+});
 
-//             console.log('Shoe was created');
-//             return res.render('', {
-//                 userId: userId,
-//                 shoeboxId: shoeboxId,
-
-
-//             })
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//             console.log('Failed to create new shoe');
-//         })
-// });
-
-// router.get('/:shoeId', (req, res) => {
-//     const userId = req.params.userId;
-//     const shoeboxId = req.params.shoeboxId;
-//     const shoeId = req.params.shoeId;
-//     User.findById(userId)
-//         .then((user) => {
-//             const foundShoebox = user.shoebox.find((shoebox) => {
-//                 return shoebox.id === shoeboxId
-//             });
-//             const foundShoe = foundShoebox.shoes.find((shoe) => {
-//                 return shoe.id === shoeId
-//             })
-//             res.render('', {
-//                 userId: userId,
-//                 shoeboxId: shoeboxId,
-
-//             });
-//         })
-//         .catch((error) => {
-//             console.log('Failed to find shoe');
-//         })
-// });
+router.delete('/:shoeId', (req, res) => {
+    Shoe.findByIdAndRemove(req.params.shoeId)
+    .then((shoe) => {
+        return res.json({
+            message: 'shoe deleted'
+        });
+    });
+});
+    
 
 
 
- module.exports = router;
+
+
+module.exports = router;
