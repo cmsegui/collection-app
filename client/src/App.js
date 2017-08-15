@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Users from './components/Users';
+import Shoebox from './components/Shoebox';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Homepage}/>
             <Route exact path="/users" component={Users} />
+            <Route exact path="/shoebox" component={Shoebox} />
           </div>
         </Router>
 

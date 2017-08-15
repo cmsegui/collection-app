@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Shoe from './components/shoe'
-import styled from 'styled-components';
+import axios from 'axios';
 
 class Shoebox extends Component {
+  constructor() {
+    super();
+    this.state = {
+      shoebox: [],
+    }
+  }
+componentWillMount() {
+    this._getShoeboxData();
+  }
+
+ _getShoeboxData = () => {
+    axios.get('')
+      .then((res) => {
+        this.setState({ users: res.data })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   render() {
     return (
-      <div>
-        <h1>THIS IS WORKING, I AM A GOD</h1>      
-      </div>
+      
+          <div>
+           <h1>Shoebox</h1>
+          </div>
+       
     );
   }
 }
