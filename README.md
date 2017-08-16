@@ -1,12 +1,12 @@
 SNEAKERHEADZ
 
-Heroku Link: 
+Heroku Link: https://guarded-hamlet-76116.herokuapp.com/
 <br>
 ERD: 
 <br>
 Wireframe:
 <br>
-User Stories:
+User Stories: https://trello.com/b/Lbj1ns7o/sneakerheadz
 <br>
 <br>
 SneakerHeadz is an application in which a user can create 'shoeboxes' containing their collection of sneakers.  You can check out other users sneakers, add them to your wishlist and eventually buy and/or trade.

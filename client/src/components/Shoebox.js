@@ -27,20 +27,18 @@ class Shoebox extends Component {
     //   });
   }
   render() {
-    return '';
+    return ( ''
+
+    )
+
   }
-    
     // return (
     //   <div>
     //     <h1>Shoebox</h1>
     //     {this.state.shoebox.map((shoebox, i) => {
     //       shoebox.shoes.map((shoe) => {
     //         return (<div key={i}>)
-    //       });
-
-          
-
-          
+    //       });          
     //     })
     //     }
 }
