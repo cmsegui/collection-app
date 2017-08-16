@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 class Users extends Component {
   constructor() {
     super();
@@ -30,10 +31,10 @@ class Users extends Component {
         {this.state.users.map((user) => {
           return (<div key={user.id}>
             <li>{user.userName}</li>
-            <img src={user.img} />
-
-            <Link to={`\/shoebox\/${user.email}`}>Shoebox</Link>
-          </div>)
+            <img src={user.img} alt='userpic' />
+            <br/>
+              <Link to={`/shoebox/${user.email}`}>Shoebox</Link>
+            </div>)
         })}
       </div>
     );

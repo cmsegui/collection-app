@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+//import Users from './components/users';
 
 class Shoebox extends Component {
   constructor() {
@@ -8,64 +9,42 @@ class Shoebox extends Component {
       shoebox: [],
     }
   }
-componentWillMount() {
+  componentWillMount() {
+    console.log('hi')
+    console.log(this.props);
     this._getShoeboxData();
   }
 
 
- _getShoeboxData = () => {
-    axios.get('/shoebox/${user.email}')
-      .then((res) => {
-        this.setState({ users: res.data })
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  _getShoeboxData = () => {
+    // axios.get(`/user/${user.email}`)
+    //   .then((res) => {
+    //     console.log(res.data)
+    //     this.setState({ shoebox: res.data.shoebox })
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }
   render() {
-    return (
-      
-          <div>
-           <h1>Shoebox</h1>
-          </div>
-       
-    );
+    return '';
   }
+    
+    // return (
+    //   <div>
+    //     <h1>Shoebox</h1>
+    //     {this.state.shoebox.map((shoebox, i) => {
+    //       shoebox.shoes.map((shoe) => {
+    //         return (<div key={i}>)
+    //       });
+
+          
+
+          
+    //     })
+    //     }
 }
 
-export default Shoebox;
+        export default Shoebox;
 
 
-
-
-// componentWillMount() {
-//         axios.get(`api/clothes`).then(res => {
-//             this.setState({clothes: res.data})
-//         });
-//     }
-
-//     render(){
-//         return (
-//             <div>
-//                 
-//                 <div>
-//                 <h1>Kerusso2.0</h1>
-//                     {this.state.shoebox.map((shoebox, i) => {
-                       // shoebox.shoes.map()
-
-
-
-//                         return (
-
-//                             <div key={i}>
-//                                 <Link to={`/shoebox/${user.email}`/></Link>
-//                             </div>
-//                         )
-//                     })}
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Home;
