@@ -8,6 +8,7 @@ Wireframe:
 <br>
 User Stories:
 <br>
+<br>
 SneakerHeadz is an application in which a user can create 'shoeboxes' containing their collection of sneakers.  You can check out other users sneakers, add them to your wishlist and eventually buy and/or trade.
 
 Future Development
@@ -17,7 +18,7 @@ Future Development
 <li>Messages between users</li>
 </ul>
 
-Technologies Used
+Technologies Used<br>
 Heroku | Node.js | MongoDB | Mongoose | JavaScript | styled-components | Trello | Imgur | VS Code Editor | React.js | Axios | 
 
 
