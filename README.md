@@ -2,9 +2,10 @@ SNEAKERHEADZ
 
 Heroku Link: https://guarded-hamlet-76116.herokuapp.com/
 <br>
-ERD: 
+ERD: http://i.imgur.com/umV6lvO.jpg
 <br>
-Wireframe:
+Wireframe: http://i.imgur.com/cpMpnhU.jpg
+http://i.imgur.com/biVe8Dq.jpg
 <br>
 User Stories: https://trello.com/b/Lbj1ns7o/sneakerheadz
 <br>

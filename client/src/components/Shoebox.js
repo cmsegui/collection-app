@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
+import Shoe from './Shoe'
 //import Users from './components/users';
 
 class Shoebox extends Component {
   constructor() {
     super();
     this.state = {
-      shoebox: [],
+      shoebox: {
+        shoes: []
+      },
     }
   }
   componentWillMount() {
@@ -17,32 +20,36 @@ class Shoebox extends Component {
 
 
   _getShoeboxData = () => {
-    // axios.get(`/user/${user.email}`)
-    //   .then((res) => {
-    //     console.log(res.data)
-    //     this.setState({ shoebox: res.data.shoebox })
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    const userEmail = this.props.match.params.email
+    console.log(userEmail)
+    axios.get(`/api/user/${userEmail}`)
+      .then((res) => {
+        console.log(res.data)
+        this.setState({ shoebox: res.data.shoebox })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
   render() {
-    return ( ''
+    console.log(typeof this.state.shoebox.shoes);
 
+    const shoes = this.state.shoebox.shoes.map((shoe, i) => {
+      return <Shoe key={i} shoe={shoe}/>
+    })
+
+    console.log(shoes);
+
+    return (
+      <div>
+        <h1>Shoebox</h1>
+        {shoes}
+      </div>
     )
-
   }
-    // return (
-    //   <div>
-    //     <h1>Shoebox</h1>
-    //     {this.state.shoebox.map((shoebox, i) => {
-    //       shoebox.shoes.map((shoe) => {
-    //         return (<div key={i}>)
-    //       });          
-    //     })
-    //     }
 }
 
-        export default Shoebox;
+export default Shoebox;
 
 
