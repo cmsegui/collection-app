@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Shoe from './Shoe'
-//import Users from './components/users';
+
 
 class Shoebox extends Component {
   constructor() {
