@@ -6,11 +6,11 @@ class Homepage extends Component {
     render() {
         return (
             <HomeStyle>
-                <div>
-                    <h1>SNEAKERHEADZ</h1>
-                    <img src='http://i.imgur.com/LqY8tvg.jpg' alt='sneakerhead' />    
+                <div className="home">
+                    <h1 className="title">SNEAKERHEADZ</h1>
+                    <Link to='/users'><img src='http://i.imgur.com/LqY8tvg.jpg' alt='sneakerhead' /></Link>    
                 </div>
-            <Link to='/users'>Users </Link>
+            
             </HomeStyle >
         );
     }
