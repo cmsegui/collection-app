@@ -1,4 +1,5 @@
-SNEAKERHEADZ
+<h1>SNEAKERHEADZ</h1>
+<img src="https://i.imgur.com/O3jhqgAm.jpg">
 
 Heroku Link: https://guarded-hamlet-76116.herokuapp.com/
 <br>
@@ -12,7 +13,7 @@ User Stories: https://trello.com/b/Lbj1ns7o/sneakerheadz
 <br>
 SneakerHeadz is an application in which a user can create 'shoeboxes' containing their collection of sneakers.  You can check out other users sneakers, add them to your wishlist and eventually buy and/or trade.
 
-Future Development
+<h3>Future Development</h3>
 <ul>
 <li>Different Search by year, brand, release</li>
 <li>Payment capabilities</li>

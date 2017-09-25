@@ -1,5 +1,12 @@
-.home {
-  background-color: #A8F6E0
+body {
+  background-color: 
+}
+
+.homeimg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 .title {
   color: black;

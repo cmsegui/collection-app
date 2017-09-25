@@ -3,6 +3,28 @@ import axios from 'axios';
 
 
 class Shoe extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     shoe: {},
+  //   }
+  // }
+  // componentWillMount() {
+  //   this._getShoeData();
+  // }
+  // _getShoeData = () => {
+  //   const id = this.props.match.params.id;
+  //   axios.get(`/api/shoebox/${userEmail}/${id}`)
+  //     .then((res) => {
+  //       this.setState({ shoe: res.data })
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
+
+
+
   render() {
     return (
       <div>
