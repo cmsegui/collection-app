@@ -20,7 +20,7 @@ SneakerHeadz is an application in which a user can create 'shoeboxes' containing
 <li>Messages between users</li>
 </ul>
 
-Technologies Used<br>
+<h3>Technologies Used</h3><br>
 Heroku | Node.js | MongoDB | Mongoose | JavaScript | styled-components | Trello | Imgur | VS Code Editor | React.js | Axios | 
 
 
