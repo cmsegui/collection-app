@@ -1,7 +1,7 @@
 <h1>SNEAKERHEADZ</h1>
 <img src="https://i.imgur.com/O3jhqgAm.jpg">
 
-<h3>Heroku Link:</h3> https://guarded-hamlet-76116.herokuapp.com/
+<h3>Heroku Link:</h3> https://sneakerheadz.herokuapp.com/
 <br>
 <h3>ERD:</h3> http://i.imgur.com/umV6lvO.jpg
 <br>
@@ -18,6 +18,7 @@ SneakerHeadz is an application in which a user can create 'shoeboxes' containing
 <li>Different Search by year, brand, release</li>
 <li>Payment capabilities</li>
 <li>Messages between users</li>
+<li>Ability to add to wishlist</li>
 </ul>
 
 <h3>Technologies Used</h3><br>
